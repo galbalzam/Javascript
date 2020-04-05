@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+    // scan array
+    var arr = [];
+    var i;
+    for( i=0;i<6;i++){
+        arr[i]=Number(prompt("Enter number for index " + i));
+    }
+    // print array
+    console.log(arr);
+
+
+    // find max number and min number
+    var max=arr[0];
+    var min=arr[0];
+    for(i=1;i<arr.length;i++){
+        if(max<arr[i]){
+        max=arr[i];
+        }
+        else if(arr[i]<min){
+            min=arr[i];
+        }
+    }
+    console.log("Max: " +max);
+    console.log("Min: " +min);
+
+    //fint the sum
+    var sum=0;
+    for(i=0;i<arr.length;i++){
+        sum+=arr[i];
+    }
+    console.log("Sum="+sum);
+
+    // odd number and even number arrays (5)
+    var brr =[]; // for even numbers
+    var crr = []; // for odd numbers
+
+    for(i=0;i<arr.length;i++){
+        if(arr[i]%2==0)
+        {
+            brr[brr.length]=arr[i];
+        }        
+        if(arr[i]%2==1){
+            crr[crr.length]=arr[i];
+        }
+    }
+
+        console.log("Even number: " +brr);
+        console.log("Odd number: " +crr);
+
+
+    // Print the second largest element in the array
+    var max,second;
+    if(arr[0]>arr[1]){
+        max=arr[0];
+        second=arr[1];
+    }
+    else{
+        max=arr[1];
+        second=arr[0];
+    }
+
+    for(var i=2;i<arr.length;i++){
+        if(arr[i]>max && arr[i]>second){
+            second=max;
+            max=arr[i];
+        }
+       else if(arr[i]>second && arr[i]<max){
+           second=arr[i];
+       }
+    }
+        console.log("Second largest :"+ second);
+
+    //marix
+   var matrix = [
+            [true,true,],
+            [true,false,],
+            [false,true,],
+            [false,false,]
+        ];
+        for(var i=0;i<4;i++){
+            if(matrix[i][0]==true){
+                if(matrix[i][1]==true){
+                    console.log("and,or");
+                }
+                else{
+                    console.log("xor,or");
+                }
+            }
+            else{ // else if(matrix[i][0]==false)
+                if(matrix[i][1]==true){
+                    console.log("xor,or");
+                }
+                else{
+                    console.log("Nothing");
+                }
+            }
+        }
+        
+        
+             
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
