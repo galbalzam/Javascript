@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //Q1
+        function reverseNumber(num) {  // 123.5
+            var numNew = Math.floor(num); // 12.3
+            var arr = [];
+            while (numNew != 0) {
+                arr[arr.length] = numNew % 10;
+                numNew = Math.floor(numNew / 10);
+            }
+
+            return arr;
+        }
+        console.log(reverseNumber(123));
+
+        //Q2
+        var num=prompt("Enter any number");
+        function checkPrime(num) {
+            for (var i = 2; i < num - 1; i++) {
+                if (num % i == 0) {
+                    return false;
+                }
+            }
+            return true;
+        }
+        console.log(checkPrime(num));
+
+        //Q3
+        function getparamtype(p) {
+            return typeof (p);
+        }
+        console.log(getparamtype(2));
+        console.log(getparamtype("bob"));
+        console.log(getparamtype(true));
+        console.log(getparamtype(undefined));
+        console.log(getparamtype([1, 2, 3]));
+        console.log(getparamtype());
+
+        //Q4
+        var num=prompt("Enter number");
+        function DollarToShekel(num) {
+            // 1$ = 3.5NIS
+            return num * 3.5;
+        }
+        console.log(DollarToShekel(num));
+
+        function ShekelToDollar(num) {
+            return num /3.5;
+        }
+        console.log(ShekelToDollar(num));
+
+        function EuroToShekel(num) {
+            return num *3.9;
+        }
+        console.log(EuroToShekel(num));
+
+        function ShekelToEuro(num) {
+            return num /3.9;
+        }
+        console.log(ShekelToEuro(num));
+    </script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>
