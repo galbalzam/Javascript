@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+    #board{
+        width: 81px;
+        background-color: pink;
+        border: 1px solid red;
+        color: red;
+    }
+
+    button{
+        width: 25px;
+        background-color: white;
+        color: blue;
+        border: 1px solid blue;
+    }
+    button:hover{
+        background-color: blue;
+        color:white;
+    }
+
+</style>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let first,second,operator;
+
+        function changeRes(num) {
+            document.getElementById("board").value += num;
+        }
+        function clearBoard(){
+            document.getElementById("board").value="";
+        }
+        function add(){
+            operator='+';
+            first=document.getElementById("board").value;
+            clearBoard();
+        }
+        function mul(){
+            operator='*';
+            first=document.getElementById("board").value;
+            clearBoard();
+        }
+        function div(){
+            operator='/';
+            first=document.getElementById("board").value;
+            clearBoard();
+        }
+        function sub(){
+            operator='-';
+            first=document.getElementById("board").value;
+            clearBoard();
+        }
+        function result(){
+            second=document.getElementById("board").value;
+            if(operator=='+'){
+                document.getElementById("board").value= parseFloat(first)+parseFloat(second);
+            }
+            else if(operator=='*'){
+                document.getElementById("board").value= parseFloat(first)*parseFloat(second);
+            }
+            else if(operator=='/'){
+                document.getElementById("board").value= parseFloat(first)/parseFloat(second);
+            }
+            else{
+                document.getElementById("board").value= parseFloat(first)-parseFloat(second);
+            }
+        }
+      
+
+    </script>
+</head>
+
+<body>
+    
+    <div>
+        <button onclick="clearBoard()">C</button>
+        <input type="text" id="board" />
+        <br />
+        <button onclick="changeRes(7)">7</button>
+        <button onclick="changeRes(8)">8</button>
+        <button onclick="changeRes(9)">9</button>
+        <button onclick="div()">/</button>
+        <br>
+        <button onclick="changeRes(6)">6</button>
+        <button onclick="changeRes(5)">5</button>
+        <button onclick="changeRes(4)">4</button>
+        <button onclick="mul()">*</button>
+        <br>
+        <button onclick="changeRes(3)">3</button>
+        <button onclick="changeRes(2)">2</button>
+        <button onclick="changeRes(1)">1</button>
+        <button onclick="sub()">-</button>
+        <br>
+        <button onclick="changeRes(0)">0</button>
+        <button onclick="changeRes('.')">.</button>
+        <button onclick="result()">=</button>
+        <button onclick="add()">+</button>
+
+
+    </div>
+</body>
+
+</html>
